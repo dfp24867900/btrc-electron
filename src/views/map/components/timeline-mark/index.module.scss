@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  .list {
+    width: calc(100% - 29px);
+    position: relative;
+    .timeline_mark {
+      height: 4px;
+      // border-bottom: 4px solid #bed302b7;
+      position: absolute;
+      left: 0;
+      bottom: 24px;
+      z-index: 1;
+      // border-left: 1px solid #000;
+      // border-right: 1px solid #000;
+    }
+  }
+}

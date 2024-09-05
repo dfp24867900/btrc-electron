@@ -1,0 +1,9 @@
+
+.button-link {
+  cursor: pointer;
+  color: var(--n-color-target);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

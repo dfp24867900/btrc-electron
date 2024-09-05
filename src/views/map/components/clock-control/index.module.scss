@@ -1,0 +1,16 @@
+.clockControl {
+  position: absolute;
+  bottom: 27px;
+  left: 0px;
+  z-index: 3;
+  padding: 4px 10px;
+  border-top-right-radius: 5px;
+  background: linear-gradient(
+    to top,
+    rgba(116, 117, 119, 0.8) 0%,
+    rgba(58, 68, 82, 0.8) 12%,
+    rgba(46, 50, 56, 0.8) 50%,
+    rgba(53, 53, 53, 0.8) 80%,
+    rgba(53, 53, 53, 0.8) 100%
+  );
+}

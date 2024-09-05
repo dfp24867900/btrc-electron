@@ -1,0 +1,32 @@
+.title {
+  margin: 8px 0;
+  padding: 0 8px;
+}
+
+.title_submit {
+  padding: 0 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    margin: 8px 0;
+  }
+}
+
+.title_auth {
+  margin: 12px 0 4px 0;
+  padding: 0 8px;
+}
+
+.spin {
+  height: 100%;
+  width: 100%;
+}
+
+.left_card {
+  height: calc((100vh - 214px));
+}
+
+.right_card {
+  height: calc((100% - 34px));
+}

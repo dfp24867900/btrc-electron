@@ -1,0 +1,65 @@
+.top_content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.top_1,
+.top_2,
+.top_3 {
+  width: 33.33%;
+  height: 100%;
+  background-size: 100% 100%;
+  a {
+    height: 100%;
+  }
+  p {
+    height: 50%;
+    text-align: center;
+    color: #fff;
+  }
+  p:first-child {
+    line-height: 17vh;
+    font-size: 36px;
+    font-weight: bold;
+    span {
+      padding-left: 10px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+  }
+  p:last-child {
+    font-size: 20px;
+  }
+}
+.top_1 {
+  background-image: url('/images/home/top1bg.png');
+}
+
+.top_2 {
+  background-image: url('/images/home/top4bg.png');
+}
+.top_3 {
+  background-image: url('/images/home/top3bg.png');
+}
+
+.middleAndBottom_content {
+  height: calc((39% - 12px));
+  margin-top: 12px;
+}
+
+.speedCard {
+  height: 100%;
+}
+
+.timeType_active {
+  background-color: rgba(68, 148, 242, 1);
+}
+
+.dataType_active {
+  background-color: rgba(242, 175, 68, 1);
+}
+
+.spin_wh {
+  height: 100%;
+  width: 100%;
+}

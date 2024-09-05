@@ -1,0 +1,70 @@
+{
+  "name": "btrc-electron",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "cross-env NODE_ENV=production vite build",
+    "build:windows": "npm run build && electron-builder --win",
+    "build:linux": "npm run build && electron-builder --linux",
+    "build:all": "npm run build && electron-builder --win --linux"
+  },
+  "build": {
+    "appId": "com.yourapp.id",
+    "productName": "YourApp",
+    "files": [
+      "dist/**",
+      "dist-electron/**"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "linux": {
+      "target": [
+        "rpm"
+      ],  
+      "icon": "build/icon.png"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cesium": "^1.96.0",
+    "echarts": "^5.5.1",
+    "http-proxy-middleware": "^3.0.1",
+    "js-cookie": "^3.0.5",
+    "lodash": "^4.17.21",
+    "naive-ui": "^2.39.0",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.14",
+    "pinia-plugin-persistedstate": "^1.6.1",
+    "qs": "^6.13.0",
+    "sass": "^1.77.8",
+    "sass-loader": "^16.0.1",
+    "vite-plugin-cesium": "^1.2.22",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-optimizer": "^1.4.2",
+    "vue": "^3.4.21",
+    "vue-i18n": "^9.14.0",
+    "vue-router": "^4.4.3",
+    "vue-tsc": "^2.0.29"
+  },
+  "devDependencies": {
+    "@vicons/antd": "^0.12.0",
+    "@vicons/fa": "^0.12.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "cross-env": "^7.0.3",
+    "electron": "^30.0.1",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.6",
+    "vite-plugin-electron": "^0.28.6",
+    "vite-plugin-electron-renderer": "^0.14.5"
+  },
+  "main": "dist-electron/main.js"
+}

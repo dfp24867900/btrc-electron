@@ -1,0 +1,26 @@
+
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid var(--n-border-color);
+
+  .nav {
+    flex: 1;
+    min-width: 130px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    .more {
+      padding: 0 20px;
+      border-bottom: 2px solid #0000;
+    }
+  }
+
+  .settings {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

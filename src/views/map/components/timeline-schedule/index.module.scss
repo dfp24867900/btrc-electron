@@ -1,0 +1,13 @@
+.container {
+  width: calc(100% - 29px);
+  position: relative;
+  pointer-events: none;
+  .timeline_schedule {
+    height: 2px;
+    border-bottom: 3px solid #00c7a699;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+}

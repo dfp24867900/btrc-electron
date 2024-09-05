@@ -1,0 +1,54 @@
+.content {
+  color: #fff;
+  border: 1px solid rgba(53, 53, 53, 0.7);
+  border-radius: 5px;
+  width: 200px;
+  min-height: 174px;
+  background-color: rgba(53, 53, 53, 0.4);
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  z-index: 1;
+  transform: translate(0, -50%);
+  transition: right 0.5s;
+  border-top-left-radius: 0;
+  box-sizing: border-box;
+  .siderMenu {
+    position: relative;
+    .siderButton {
+      width: 14px;
+      position: absolute;
+      top: 50%;
+      left: -32px;
+      transform: translate(0, -1%);
+      border-left: 1px solid rgba(53, 53, 53, 0.7);
+      border-top: 1px solid rgba(53, 53, 53, 0.7);
+      border-bottom: 1px solid rgba(53, 53, 53, 0.7);
+      padding: 5px 8px;
+      background-color: rgba(53, 53, 53, 0.4);
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  .container {
+    // pointer-events: none;
+    .labels {
+      padding: 0 5px;
+    }
+    .labelItem {
+      background-color: rgba(53, 53, 53, 0.5);
+      margin: 5px 0;
+      border-radius: 3px;
+      padding: 3px 5px;
+      color: #fff;
+      .labelText {
+        font-size: 0.875rem;
+        user-select: none;
+        word-wrap: break-word;
+      }
+    }
+  }
+}
