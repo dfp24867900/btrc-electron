@@ -2,6 +2,12 @@
   "name": "btrc-electron",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://your-project-homepage.com",
+  "author": {
+    "name": "Buchixiangcai",
+    "email": "1031708506@qq.com",
+    "url": "https://your-website.com"
+  },
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
@@ -28,7 +34,8 @@
       "target": [
         "rpm"
       ],  
-      "icon": "build/icon.png"
+      "icon": "build/icon.png",
+      "maintainer": "Buchixiangcai <1031708506@qq.com>"
     }
   },
   "dependencies": {
