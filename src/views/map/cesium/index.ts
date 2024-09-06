@@ -4,7 +4,6 @@ import _ from 'lodash';
 import { useDateFormatter } from './components/date-formatter';
 import { addProperties } from './components/add-properties';
 import { initModel } from './components/init-model';
-import prefix from '@/service/prefix';
 import type {
   MapVariables,
   Properties,
@@ -15,11 +14,12 @@ import type {
 } from './types';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
+const gisResourceURL = String(import.meta.env.VITE_APP_DEV_GISRESOURCE_URL);
 const tileUrl = isDevelopment
-  ? prefix.gisResource + `/map/{z}/{x}/{y}.png` // 开发环境路径
+  ? gisResourceURL + `/map/{z}/{x}/{y}.png` // 开发环境路径
   : 'file:///E:/BTRC/hy-resources/map/wp/{z}/{x}/{y}.png'; // 生产环境本地路径
 const terrainUrl = isDevelopment
-  ? prefix.gisResource + `/tiles/` // 开发环境路径
+  ? gisResourceURL + `/tiles/` // 开发环境路径
   : 'file:///E:/BTRC/hy-resources/map/gc'; // 生产环境本地路径
 
 let viewer: any = null;
@@ -259,20 +259,18 @@ export function useCesium(mapOption: MapOption, mapSetting: MapSetting) {
       fullscreenElement: fullscreenId,
       msaaSamples: 4,
       scene3DOnly: true,
-      skyBox: false,
+      skyBox: false, // 关闭天空盒
       creditContainer: undefined, // 禁用默认的 ion credit
-      // showRenderLoopErrors: false,
+      // showRenderLoopErrors: false, // 关闭渲染错误
       requestRenderMode: false, // 显式渲染
       // 瓦片
       imageryProvider: new Cesium.UrlTemplateImageryProvider({
-        // url: prefix.gisResource + `/map/{z}/{x}/{y}.png`,
         url: tileUrl, // 替换为你的本地瓦片路径
         minimumLevel: 1,
         maximumLevel: 18
       }),
       // 高程
       terrainProvider: new Cesium.CesiumTerrainProvider({
-        // url: prefix.gisResource + `/tiles/`
         url: terrainUrl // 替换为你的本地路径
       })
     });
@@ -439,14 +437,14 @@ export function useCesium(mapOption: MapOption, mapSetting: MapSetting) {
   };
 
   // 控制所有标签、轨迹
-  const controlLabelPath = (type: string, value: boolean) => {
-    if (!viewer) return;
-    viewer.entities.values.forEach((item: any) => {
-      if (item.type == 'model') {
-        item[type].show = value;
-      }
-    });
-  };
+  // const controlLabelPath = (type: string, value: boolean) => {
+  //   if (!viewer) return;
+  //   viewer.entities.values.forEach((item: any) => {
+  //     if (item.type == 'model') {
+  //       item[type].show = value;
+  //     }
+  //   });
+  // };
 
   // 模型聚焦动画
   let selectionIndicator: Cesium.SelectionIndicator;

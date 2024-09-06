@@ -1,9 +1,9 @@
-import { Service } from '@/service/service'
-import prefix from '@/service/prefix'
+import { Service } from '@/service/service';
 
+const gisResourceURL = String(import.meta.env.VITE_APP_DEV_GISRESOURCE_URL);
 export function getJson(url: string): any {
   return Service({
-    url: prefix.gisResource + '/json/' + url,
+    url: gisResourceURL + '/json/' + url,
     method: 'get'
-  })
+  });
 }

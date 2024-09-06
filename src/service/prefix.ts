@@ -1,7 +1,5 @@
 export default {
-  gisResource: '/gis', // GIS资源
-  authorize: '/authorize', // 权限
   gis: '/common-gis', // GIS
-  hy: '/hy', // GIS
+  authorize: '/authorize', // 权限
   physiological: '/physiological-system'
 };

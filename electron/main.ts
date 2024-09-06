@@ -1,4 +1,4 @@
-import { app, BrowserWindow, protocol } from 'electron';
+import { app, BrowserWindow } from 'electron';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -28,10 +28,10 @@ let win: BrowserWindow | null;
 
 function createWindow() {
   win = new BrowserWindow({
-    icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
+    icon: path.join(process.env.VITE_PUBLIC, '20240905165624.jpg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: false,
+      nodeIntegration: true,
       contextIsolation: true,
       webSecurity: true
     },
@@ -49,13 +49,6 @@ function createWindow() {
   win.webContents.on('did-finish-load', () => {
     win?.webContents.send('main-process-message', new Date().toLocaleString());
   });
-
-  // if (VITE_DEV_SERVER_URL) {
-  //   win.loadURL(VITE_DEV_SERVER_URL);
-  // } else {
-  //   // win.loadFile('dist/index.html');
-  //   win.loadFile(path.join(RENDERER_DIST, 'index.html'));
-  // }
 
   win.loadURL(
     process.env.NODE_ENV === 'development'

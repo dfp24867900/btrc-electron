@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import * as Cesium from 'cesium';
-import prefix from '@/service/prefix';
 import { useGeometry } from './geometry-primitive';
 import { addParticleSystem } from './use-particle-system';
 import type { Propertys, MapVariables, MapSetting } from '../types';
@@ -52,7 +51,7 @@ export function initModel(mapVariables: MapVariables, mapSetting: MapSetting) {
       viewFrom: new Cesium.Cartesian3(0, 1500, 1500),
       ...propertys,
       model: {
-        uri: prefix.gisResource + `/planemodel/${planePath}`, //飞机模型
+        uri: `/planemodel/${planePath}`, //飞机模型
         scale: 10,
         minimumPixelSize: 60,
         shadows: false,
@@ -234,7 +233,7 @@ export function initModel(mapVariables: MapVariables, mapSetting: MapSetting) {
                 position: propertys.position,
                 orientation: propertys.orientation,
                 model: {
-                  uri: prefix.gisResource + `/planemodel/emi_left_bottom.glb`,
+                  uri: `/planemodel/emi_left_bottom.glb`,
                   scale: 120,
                   minimumPixelSize: 50,
                   shadows: false,
@@ -252,7 +251,7 @@ export function initModel(mapVariables: MapVariables, mapSetting: MapSetting) {
                 position: propertys.position,
                 orientation: propertys.orientation,
                 model: {
-                  uri: prefix.gisResource + `/planemodel/emi_right_bottom.glb`,
+                  uri: `/planemodel/emi_right_bottom.glb`,
                   scale: 120,
                   minimumPixelSize: 60,
                   shadows: false,
@@ -270,7 +269,7 @@ export function initModel(mapVariables: MapVariables, mapSetting: MapSetting) {
                 position: propertys.position,
                 orientation: propertys.orientation,
                 model: {
-                  uri: prefix.gisResource + `/planemodel/emi_right_top.glb`,
+                  uri: `/planemodel/emi_right_top.glb`,
                   scale: 120,
                   minimumPixelSize: 60,
                   shadows: false,
@@ -288,7 +287,7 @@ export function initModel(mapVariables: MapVariables, mapSetting: MapSetting) {
                 position: propertys.position,
                 orientation: propertys.orientation,
                 model: {
-                  uri: prefix.gisResource + `/planemodel/emi_left_top.glb`,
+                  uri: `/planemodel/emi_left_top.glb`,
                   scale: 120,
                   minimumPixelSize: 60,
                   shadows: false,

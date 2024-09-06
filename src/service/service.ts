@@ -77,9 +77,9 @@ const paramsSerializer = (params: any) => {
 };
 
 // 统一管理
+const apiURL = String(import.meta.env.VITE_APP_DEV_WEB_URL);
 const RequestConfig: AxiosRequestConfig = {
-  // baseURL: 'http://localhost:8762',
-  baseURL: process.env.NODE_ENV === 'production' ? 'http://localhost:8762/' : '/api',
+  baseURL: process.env.NODE_ENV === 'production' ? apiURL : '/api',
   timeout: 15000,
   transformRequest: transformRequest,
   paramsSerializer: paramsSerializer

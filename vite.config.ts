@@ -54,32 +54,21 @@ export default defineConfig(({ mode }) => {
     build: {
       rollupOptions: {
         output: {
-          chunkFileNames: 'static/js/[name]-[hash].js',
-          entryFileNames: 'static/js/[name]-[hash].js',
-          assetFileNames: 'static/[ext]/[name]-[hash].[ext]'
+          // 输出路径调整到应用程序根目录
+          assetFileNames: 'assets/[name].[hash].[ext]',
+          chunkFileNames: 'chunks/[name].[hash].js',
+          entryFileNames: 'entry/[name].[hash].js'
         }
-      }
+      },
+      outDir: 'dist' // 生成的文件夹
     },
     server: {
       proxy: {
-        // gis地图资源
-        '/gis/': {
-          target: loadEnv('development', './').VITE_APP_DEV_GISRESOURCE_URL,
-          changeOrigin: true,
-          rewrite: (path: string) => path.replace(/^\/gis/, '')
-        },
-        // 自研功能
         '/api': {
           target: loadEnv('development', './').VITE_APP_DEV_WEB_URL,
           changeOrigin: true,
           rewrite: (path: string) => path.replace(/^\/api/, '')
-        },
-        // // gis-websocket
-        // '/common-gis/websocket': {
-        //   target: loadEnv('development', './').VITE_APP_DEV_GISSOCKET_URL,
-        //   changeOrigin: true,
-        //   ws: true
-        // }
+        }
       }
     }
   };
